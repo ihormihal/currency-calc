@@ -32,16 +32,6 @@ gulp.task('vendorCss', function() {
 	.pipe(gulp.dest(buildDir));
 });
 
-gulp.task('vendorFonts', function () {
-	return browserify({entries: srcDir+'/app/app.js'})
-	.transform('babelify', {
-		presets: ['es2015']
-	})
-	.bundle()
-	.pipe(source('app.min.js'))
-	.pipe(gulp.dest(buildDir));
-});
-
 gulp.task('vendorFonts', function() {
 	var files = [
 		'./bower_components/lumx/dist/fonts/**'

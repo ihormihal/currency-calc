@@ -8,7 +8,7 @@ const template = `
 		        <input 
 				type="number" 
 				step="0.01"
-				ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" 
+				ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
 				ng-model="$ctrl.valueFrom" 
 				ng-change="$ctrl.calculate()">
 		    </lx-text-field>
@@ -93,8 +93,6 @@ class Controller {
 	}
 
 }
-
-//Controller.$inject = ['Socket', 'Currencies'];
 
 export default {
 	transclude: true,

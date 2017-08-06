@@ -12,7 +12,6 @@ Services.factory('Socket', ($rootScope) => {
 			socket.on(eventName, function() {
 				var args = arguments;
 				$rootScope.$apply(function() {
-					//console.log('apply');
 					callback.apply(socket, args);
 				});
 				callback.apply(socket, args);
@@ -32,13 +31,6 @@ Services.factory('Socket', ($rootScope) => {
 });
 
 
-// Services.factory('Currencies', Currencies);
-
-// class Currencies {
-//     constructor($resource) {
-//         this.$resource = $resource;
-//     }
-// }
 Services.factory('Currencies', ($resource) => $resource('currencies'));
 
 export default Services;
