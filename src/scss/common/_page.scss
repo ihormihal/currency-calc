@@ -23,3 +23,25 @@ footer {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.app-component {
+	.result {
+		padding: $base-spacing-unit*4;
+		font-size: 7rem;
+	}
+}
+
+@include media-query(palm) {
+    h1 {
+    	font-size: 1em;
+    }
+    .app-component {
+    	.swp {
+    		display: none;
+    	}
+		.result {
+			padding: $base-spacing-unit*2;
+			font-size: 4rem;
+		}
+	}
+}
