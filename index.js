@@ -41,7 +41,7 @@ app.get('/currencies', function(req, res) {
 
 
 //calculation function
-function calculate(data) {
+function calculate(data, s) {
 	let rateFrom = 1;
 	let rateTo = 1;
 	currencies.forEach((cur) => {
@@ -50,23 +50,21 @@ function calculate(data) {
 	});
 	let result = Math.floor(parseFloat(data.value) * (rateTo / rateFrom) * 100) / 100;
 	if (isNaN(result)) {
-		socket.emit('result', 'Incorrect value!');
+		s.emit('result', 'Incorrect value!');
 	} else {
-		socket.emit('result', result);
+		s.emit('result', result);
 	}
 }
 
 //socket
-socket.on('connection', function(socket) {
-	console.log('a user connected');
+socket.on('connection', function(s) {
+	s.emit('init', 'socket test data');
 
-	socket.emit('init', 'socket test data');
-
-	socket.on('calculate', function(data) {
-		calculate(data);
+	s.on('calculate', function(data) {
+		calculate(data, s);
 	});
 
-	socket.on('disconnect', function() {
+	s.on('disconnect', function() {
 		console.log('user disconnected');
 	});
 });
