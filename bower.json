@@ -1,0 +1,21 @@
+{
+  "name": "ihormihal-test-task",
+  "authors": [
+    "ihormihal <ihor.mihal@gmail.com>"
+  ],
+  "description": "Currencies calculator",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "mycode.in.ua",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.5",
+    "lumx": "^1.5.24"
+  }
+}
